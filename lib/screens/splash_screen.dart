@@ -23,10 +23,15 @@ class SplashState extends State<Splash> {
   }
 
   @override
-  Widget build(BuildContext context) => const Scaffold(
-        body: Center(
-          child: RiveAnimation.network(
-            'https://public.rive.app/community/runtime-files/196-360-loading.riv',
+  Widget build(BuildContext context) => Scaffold(
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: Colors.redAccent.shade100,
+          child: const Center(
+            child: RiveAnimation.network(
+              'https://public.rive.app/community/runtime-files/196-360-loading.riv',
+            ),
           ),
         ),
       );
