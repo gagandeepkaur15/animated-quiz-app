@@ -28,7 +28,12 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: const Color.fromARGB(255, 189, 229, 227),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/bg.jpg'),
+            fit: BoxFit.fill,
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -45,8 +50,7 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('Total Coins Earned',
-                      style: GoogleFonts.kalam(fontSize: 20)),
+                  Text('Earned', style: GoogleFonts.kalam(fontSize: 20)),
                   const SizedBox(
                     width: 10,
                   ),

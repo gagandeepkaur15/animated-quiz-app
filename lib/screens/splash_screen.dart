@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:quiz_app/screens/home_page.dart';
+import 'package:quiz_app/screens/signin.dart';
 import 'package:rive/rive.dart';
 
 class Splash extends StatefulWidget {
@@ -20,7 +19,7 @@ class SplashState extends State<Splash> {
   _navigatetohome() async {
     await Future.delayed(const Duration(seconds: 3), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+        context, MaterialPageRoute(builder: (context) => const SignIn()));
   }
 
   @override

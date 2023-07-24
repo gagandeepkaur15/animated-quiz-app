@@ -58,18 +58,18 @@ class _HomePageState extends State<HomePage> {
       'questionText': 'What is Earth’s only natural satellite',
       'answers': [
         {'text': 'Sun', 'score': 0},
-        {'text': 'Moon', 'score': 0},
+        {'text': 'Moon', 'score': 1},
         {'text': 'Mars', 'score': 0},
-        {'text': 'Venus', 'score': 1},
+        {'text': 'Venus', 'score': 0},
       ],
     },
     {
       'questionText': 'Which shape has more corners',
       'answers': [
-        {'text': 'Hexagon', 'score': 0},
+        {'text': 'Hexagon', 'score': 1},
         {'text': 'Pentagon', 'score': 0},
         {'text': 'Triangle', 'score': 0},
-        {'text': 'Quadrilateral', 'score': 1},
+        {'text': 'Quadrilateral', 'score': 0},
       ],
     },
     {
