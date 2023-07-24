@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import './preferences.dart';
-import 'screens/result.dart';
+import 'preferences.dart';
+import '../screens/result.dart';
 
 class MCQ extends StatefulWidget {
   final List<Map<String, Object>> questions;
@@ -26,13 +25,6 @@ class _MCQState extends State<MCQ> {
   final controller = LiquidController();
   int totalScore = 0;
   int coins = 0;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-
-    // coins = UserSimplePrefences.getCoins();
-  }
 
   @override
   Widget build(BuildContext context) {

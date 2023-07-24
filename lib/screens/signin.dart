@@ -33,7 +33,6 @@ class _SignInState extends State<SignIn> {
       );
 
       final User? user = (await auth.signInWithCredential(credential)).user;
-      // print("signed in " + user.displayName);
 
       return user;
     } catch (e) {
@@ -53,7 +52,6 @@ class _SignInState extends State<SignIn> {
             image: AssetImage('assets/bg.jpg'),
             fit: BoxFit.fill,
           ),
-          
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

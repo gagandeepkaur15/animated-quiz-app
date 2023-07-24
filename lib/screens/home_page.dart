@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/mcq.dart';
+import 'package:quiz_app/widgets/mcq.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -101,49 +100,42 @@ class _HomePageState extends State<HomePage> {
     pages = [
       MCQ(
         questions: questions,
-        // questionIndex: questionIndex,
         pageIndex: 0,
         color: const Color.fromARGB(255, 189, 229, 227),
         answerSelectedList: answerSelectedList,
       ),
       MCQ(
         questions: questions,
-        // questionIndex: questionIndex + 1,
         pageIndex: 1,
         color: const Color.fromARGB(255, 161, 122, 235),
         answerSelectedList: answerSelectedList,
       ),
       MCQ(
         questions: questions,
-        // questionIndex: questionIndex + 2,
         pageIndex: 2,
         color: const Color.fromARGB(255, 216, 158, 81),
         answerSelectedList: answerSelectedList,
       ),
       MCQ(
         questions: questions,
-        // questionIndex: questionIndex + 3,
         pageIndex: 3,
         color: const Color.fromARGB(255, 227, 107, 107),
         answerSelectedList: answerSelectedList,
       ),
       MCQ(
         questions: questions,
-        // questionIndex: questionIndex + 4,
         pageIndex: 4,
         color: const Color.fromARGB(255, 189, 229, 227),
         answerSelectedList: answerSelectedList,
       ),
       MCQ(
         questions: questions,
-        // questionIndex: questionIndex + 5,
         pageIndex: 5,
         color: const Color.fromARGB(255, 161, 122, 235),
         answerSelectedList: answerSelectedList,
       ),
       MCQ(
         questions: questions,
-        // questionIndex: questionIndex + 6,
         pageIndex: 6,
         color: const Color.fromARGB(255, 216, 158, 81),
         answerSelectedList: answerSelectedList,
@@ -168,7 +160,6 @@ class _HomePageState extends State<HomePage> {
         liquidController: controller,
         fullTransitionValue: 600,
         preferDragFromRevealedArea: false,
-        //initialPage: 1,
         slideIconWidget: const Icon(Icons.arrow_back_ios, size: 20),
         positionSlideIcon: 0.7, //position on vertical axis(0 to 1)
         enableLoop: false,
@@ -177,9 +168,6 @@ class _HomePageState extends State<HomePage> {
         disableUserGesture: false,
         enableSideReveal: true,
         onPageChangeCallback: onPageChange,
-        // slidePercentCallback: (slidePercentHorizontal, slidePercentVertical) {
-        //   print('slidePercentCallBack called');
-        // },
         currentUpdateTypeCallback: (updateType) {
           print(updateType);
         },
