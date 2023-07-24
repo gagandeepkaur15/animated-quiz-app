@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/screens/splash_screen.dart';
+import 'mcq.dart';
+import 'preferences.dart';
 
-import 'splash_screen.dart';
-
-void main() async {
+void main()  {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await UserSimplePrefences.init();
   runApp(const MyApp());
 }
 

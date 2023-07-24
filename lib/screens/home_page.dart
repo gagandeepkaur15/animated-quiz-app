@@ -97,12 +97,6 @@ class _HomePageState extends State<HomePage> {
         (_) => false,
       );
     });
-    // answerSelectedList = List.generate(
-    // (questions[questionIndex]['answers']
-    //         as List<Map<String, Object>>)
-    //     .length,
-    // (_) => false,
-    // );
 
     pages = [
       MCQ(
@@ -168,30 +162,27 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: LiquidSwipe(
-          pages: pages,
-          liquidController: controller,
-          fullTransitionValue: 600,
-          preferDragFromRevealedArea: false,
-          //initialPage: 1,
-          slideIconWidget: const Icon(Icons.arrow_back_ios, size: 20),
-          positionSlideIcon: 0.7, //position on vertical axis(0 to 1)
-          enableLoop: false,
-          waveType: WaveType.liquidReveal,
-          ignoreUserGestureWhileAnimating: false,
-          disableUserGesture: false,
-          enableSideReveal: true,
-          onPageChangeCallback: onPageChange,
-          // slidePercentCallback: (slidePercentHorizontal, slidePercentVertical) {
-          //   print('slidePercentCallBack called');
-          // },
-          currentUpdateTypeCallback: (updateType) {
-            print(updateType);
-          },
-        ),
+    return Scaffold(
+      body: LiquidSwipe(
+        pages: pages,
+        liquidController: controller,
+        fullTransitionValue: 600,
+        preferDragFromRevealedArea: false,
+        //initialPage: 1,
+        slideIconWidget: const Icon(Icons.arrow_back_ios, size: 20),
+        positionSlideIcon: 0.7, //position on vertical axis(0 to 1)
+        enableLoop: false,
+        waveType: WaveType.liquidReveal,
+        ignoreUserGestureWhileAnimating: false,
+        disableUserGesture: false,
+        enableSideReveal: true,
+        onPageChangeCallback: onPageChange,
+        // slidePercentCallback: (slidePercentHorizontal, slidePercentVertical) {
+        //   print('slidePercentCallBack called');
+        // },
+        currentUpdateTypeCallback: (updateType) {
+          print(updateType);
+        },
       ),
     );
   }

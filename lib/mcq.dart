@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:quiz_app/result.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import './preferences.dart';
+import 'screens/result.dart';
 
 class MCQ extends StatefulWidget {
   final List<Map<String, Object>> questions;
@@ -23,20 +25,14 @@ class MCQ extends StatefulWidget {
 class _MCQState extends State<MCQ> {
   final controller = LiquidController();
   int totalScore = 0;
-  // List<bool> answerSelectedList =
-  //     []; // List to track if each answer has been selected
+  int coins = 0;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // Initialize the answerSelectedList with 'false' for each answer
-  //   answerSelectedList = List.generate(
-  //     (widget.questions[widget.pageIndex]['answers']
-  //             as List<Map<String, Object>>)
-  //         .length,
-  //     (_) => false,
-  //   );
-  // }
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    // coins = UserSimplePrefences.getCoins();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +61,7 @@ class _MCQState extends State<MCQ> {
                   return MapEntry(
                     index,
                     GestureDetector(
-                      onTap: () {
+                      onTap: () async {
                         if (!isSelected) {
                           setState(() {
                             widget.answerSelectedList = List.generate(
@@ -76,7 +72,9 @@ class _MCQState extends State<MCQ> {
                                 true; // Update the selected answer index
                             totalScore = totalScore +
                                 int.parse(answer['score']?.toString() ?? '0');
+                            coins = totalScore;
                           });
+                          await UserSimplePrefences.setCoins(coins);
                         }
                       },
                       child: Container(
@@ -112,6 +110,7 @@ class _MCQState extends State<MCQ> {
                   MaterialPageRoute(
                     builder: (context) => Result(
                       totalScore: totalScore,
+                      coins: coins,
                     ),
                   ),
                 );

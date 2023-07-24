@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/home_page.dart';
 import 'package:flutter/services.dart';
+import 'package:quiz_app/screens/home_page.dart';
 import 'package:rive/rive.dart';
 
 class Splash extends StatefulWidget {
