@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
-import 'home_page.dart';
+import 'package:quiz_app/screens/home_page.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
